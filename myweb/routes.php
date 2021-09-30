@@ -1,5 +1,5 @@
 <?php
-$controllers = array('pages'=>['home', 'error']); 
+$controllers = array('pages'=>['home', 'error'],'quotation'=>['index']); 
 
 function call($controller, $action){
 	echo "routes to ".$controller."-".$action."<br>";
@@ -8,6 +8,9 @@ function call($controller, $action){
 	{
 		case "pages":	$controller = new PagesController();
 						break;
+		case "quotation" : require_once("models/quotationModel.php");
+							$controller = new QuotationController();
+							break;
 	}
 
 	$controller->{$action}();
