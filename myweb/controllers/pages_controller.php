@@ -1,5 +1,5 @@
 <?php
-class PageController
+class PagesController
 {
     public function home()
     {
