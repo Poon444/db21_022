@@ -2,7 +2,7 @@
 if(isset($_GET['controller'])&&isset($_GET['action']))
 {
         $controller = $_GET['controller'];
-        $controller = $_GET['action'];
+        $action = $_GET['action'];
 }
 else
 {
