@@ -19,7 +19,6 @@ if(isset($_GET['controller']) && isset($_GET['action']))
 
     [<a href="?controller=quotation&action=index">quotation</a>]
     [<a href="?controller=priceproduct&action=index">priceproduct</a>]
-    
     <br>
     <?php require_once("./routes.php"); ?>
 </body>
