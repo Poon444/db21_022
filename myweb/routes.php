@@ -9,12 +9,12 @@ function call($controller, $action){
 	{
 		case "pages":	$controller = new PagesController();
 						break;
+						
 		case "priceproduct" : 	$controller = new PriceproductController();
 								require_once("models/priceproductModel.php");
 								break;
 
-		case "quotation" :  echo "hi";
-							require_once("models/quotationModel.php");
+		case "quotation" :  require_once("models/quotationModel.php");
 							require_once("models/employeeModel.php");
 							require_once("models/customerModel.php");
 							$controller = new QuotationController();

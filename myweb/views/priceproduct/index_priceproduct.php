@@ -7,7 +7,6 @@
 <td>ScreenPrice</td>
 <td>Update</td>
 <td>Delete</td></tr>
-<p>hi</p>
 
 <form method="get"action="">
     <input type="text" name="key">
