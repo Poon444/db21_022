@@ -1,5 +1,5 @@
 <?php
-$controllers = array('pages'=>['home', 'error'],'quotation'=>['index','newQuotation','addQuotation','search','updateForm','update']); 
+$controllers = array('pages'=>['home', 'error'],'quotation'=>['index','newQuotation','addQuotation','search','updateForm','update','deleteConfirm','delete']); 
 
 function call($controller, $action){
 	echo "routes to ".$controller."-".$action."<br>";

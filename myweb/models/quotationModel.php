@@ -110,4 +110,13 @@ class Quotation
         require("connection_close.php");
         return ;
      }
+
+     public static function delete($id)
+     {
+         require("connection_connect.php");
+         $sql = "DELETE FROM quotation WHERE Q_ID = '$id'";
+         $result = $conn->query($sql);
+         require("connection_close.php");
+         return ;
+     }
 }

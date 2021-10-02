@@ -23,8 +23,9 @@ search</button>
     <td>$quotation->EMP_NAME</td> 
     <td>$quotation->CUS_Add</td>
     <td>$quotation->CUS_Tel</td> 
-    <td><a href=?controller=quotation&action=updateForm&Q_ID=$quotation->Q_ID>update</a>
-    </td></tr>"; 
+    <td><a href=?controller=quotation&action=updateForm&Q_ID=$quotation->Q_ID>update</a></td>
+    <td><a href=?controller=quotation&action=deleteConfirm&Q_ID=$quotation->Q_ID>delete</a></td>
+    </tr>"; 
 }
 echo "</table>";
 ?>

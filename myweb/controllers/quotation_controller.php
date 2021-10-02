@@ -55,5 +55,18 @@ class QuotationController
         QuotationController::index();
     }
     
+    public function deleteConfirm()
+    {
+        $id=$_GET['Q_ID'];
+        $quotation = Quotation::get($id);
+        require_once("./views/quotation/deleteConfirm.php");
+    }
+    public function delete()
+    {
+        $id=$_GET['Q_ID'];
+        Quotation::delete($id);
+        QuotationController::index();
+    }
+    
 }
 ?>
