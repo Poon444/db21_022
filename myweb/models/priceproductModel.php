@@ -8,7 +8,7 @@ class priceproduct{
     public $PRO_Name;
 
 
-    public function_construct($PRI_ID,$PRO_ID,$PRI_Qty,$PRI_Price,$PRI_SCEEN,$PRO_Name)
+    public function __construct($PRI_ID,$PRO_ID,$PRI_Qty,$PRI_Price,$PRI_SCEEN,$PRO_Name)
     {
         $this->PRI_ID = $PRI_ID;
         $this->PRO_ID = $PRO_ID;
@@ -20,7 +20,7 @@ class priceproduct{
     public static function get($id)
     {
         requite("connection_connect.php");
-        $sql = "SELECT * from priceproduct NATURAL JOIN product";
+        $sql = "SELECT * FROM priceproduct NATURAL JOIN product";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
         $PRI_ID=$my_row[PRI_ID];
