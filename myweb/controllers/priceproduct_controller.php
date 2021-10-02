@@ -3,8 +3,7 @@ class PriceproductController
 {
     public function index()
     {
-        echo "hi";
-        $priceproductList = priceproduct::getAll();
+        $priceproductList = Priceproduct::getAll();
         require_once("./views/priceproduct/index_priceproduct.php");
     }
 } ?>

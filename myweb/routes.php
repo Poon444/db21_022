@@ -9,9 +9,9 @@ function call($controller, $action){
 	{
 		case "pages":	$controller = new PagesController();
 						break;
-		case "priceproduct" : echo "hi";
-							$controller = new PriceproductController();
-							break;
+		case "priceproduct" : 	$controller = new PriceproductController();
+								require_once("models/priceproductModel.php");
+								break;
 
 		case "quotation" :  echo "hi";
 							require_once("models/quotationModel.php");
