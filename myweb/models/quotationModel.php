@@ -16,12 +16,10 @@ class Quotation
 
     public static function getAll()
     {
-        // echo "ingetall";
         $quotationList = [];
         require("connection_connect.php");
         $sql = "SELECT * FROM quotation NATURAL JOIN customer NATURAL JOIN employee";
         $result = $conn->query($sql);
-        // echo $sql;
         while ($my_row = $result->fetch_assoc()) {
             $q_id = $my_row[Q_ID];
             $date = $my_row[Q_DATE];
@@ -40,9 +38,28 @@ class Quotation
        require("connection_connect.php");
        $float = (float)$qdeposit;
        $sql = "INSERT INTO `quotation` (`Q_ID`, `Q_DATE`, `EMP_ID`, `CUS_ID`, `Q_CDT`, `Q_deposit`, `PDO_M`) VALUES ('$qid', '$qdate', '$idemp', '$idcus', '$qcdt', '$qdeposit','$pdom')";
-       echo "hi";
        $result = $conn->query($sql);
        require("connection_close.php");
        return  ;
+    }
+
+    public static function search($key)
+    {
+        require("connection_connect.php");
+        $sql="SELECT * FROM quotation NATURAL JOIN employee NATURAL JOIN customer WHERE (Q_ID like '%$key%' or Q_DATE like '%$key%' or EMP_Name like '%$key%' or CUS_Name like '%$key%')and CUS_ID=CUS_ID";
+        $result=$conn->query($sql);
+        while($my_row=$result->fetch_assoc())
+        {
+            $q_id = $my_row[Q_ID];
+            $date = $my_row[Q_DATE];
+            $cus_name = $my_row[CUS_Name];
+            $emp_name = $my_row[EMP_Name];
+            $cus_add = $my_row[CUS_Add];
+            $cus_tel = $my_row[CUS_Tel];
+            $quotationList[] = new Quotation($q_id,$date,$cus_name,$emp_name,$cus_add,$cus_tel);
+        }
+        require("connection_close.php");
+        return $quotationList;
+
     }
 }

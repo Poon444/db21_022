@@ -26,5 +26,11 @@ class QuotationController
 
         QuotationController::index();
     }
+    public function search()
+    {
+        $key=$_GET['key'];
+        $quotationList = Quotation::search($key);
+        require_once("./views/quotation/index_quotation.php");
+    }
 }
 ?>

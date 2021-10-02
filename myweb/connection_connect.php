@@ -10,10 +10,6 @@
     {
         die("Connection failed: ".$conn->connect_error);
     }
-    else
-    {
-        echo "OK";
-    }
     if(!$conn->select_db($dbname))
     {
         die("Connection failed: ".$conn->connect_error);
