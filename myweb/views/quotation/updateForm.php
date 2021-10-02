@@ -27,6 +27,7 @@
         value="<?php echo $quotation->Q_deposit;?>"/></label><br>
 
 <input type="hidden"name="controller"value="quotation"/>
+<input type="hidden" name="oldid" value="<?php echo $quotation->Q_ID; ?>"/>
 <button type= "submit"name="action"value="index">back</button>
 <button type= "submit"name="action"value="update">update</button>
 

@@ -24,7 +24,7 @@ class Quotation
     {
         $quotationList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM quotation NATURAL JOIN customer NATURAL JOIN employee";
+        $sql = "SELECT * FROM quotation NATURAL JOIN customer NATURAL JOIN employee ORDER BY Q_ID";
         $result = $conn->query($sql);
         while ($my_row = $result->fetch_assoc()) {
             $q_id = $my_row[Q_ID];
@@ -101,11 +101,11 @@ class Quotation
         return new Quotation($q_id,$date,$cus_name,$emp_name,$cus_add,$cus_tel,$cus_id,$emp_id,$q_cdt,$q_deposit);
 
     }
-    public static function Update($qid,$date,$idcus,$idemp,$qcdt,$qdeposit)
+    public static function Update($qid,$date,$idcus,$idemp,$qcdt,$qdeposit,$oldid)
      {
         require("connection_connect.php");
         $sql="UPDATE `quotation` SET `Q_ID`='$qid',`Q_DATE`='$date',
-        `EMP_ID`='$idemp',`CUS_ID`='$idcus',`Q_CDT`='$qcdt',`Q_deposit`='$qdeposit' WHERE Q_ID = '$qid'";
+        `EMP_ID`='$idemp',`CUS_ID`='$idcus',`Q_CDT`='$qcdt',`Q_deposit`='$qdeposit' WHERE Q_ID = '$oldid'";
         $result=$conn->query($sql);
         require("connection_close.php");
         return ;

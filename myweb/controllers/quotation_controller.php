@@ -50,11 +50,12 @@ class QuotationController
         $employee=$_GET['EMP_Name'];
         $qcdt=$_GET['Q_CDT'];
         $qdeposit=$_GET['Q_deposit'];
-        Quotation::Update($qid,$date,$customer,$employee,$qcdt,$qdeposit);
+        $oldid=$_GET['oldid'];
+        Quotation::Update($qid,$date,$customer,$employee,$qcdt,$qdeposit,$oldid);
 
         QuotationController::index();
     }
-    
+
     public function deleteConfirm()
     {
         $id=$_GET['Q_ID'];
