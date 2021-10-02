@@ -21,6 +21,6 @@ if(isset($_GET['controller']) && isset($_GET['action']))
     [<a href="?controller=priceproduct&action=index">priceproduct</a>]
     
     <br>
-    <?php require_once("routes.php"); ?>
+    <?php require_once("./routes.php"); ?>
 </body>
 </html>

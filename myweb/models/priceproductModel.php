@@ -38,7 +38,7 @@ class priceproduct{
     {
         $priceproductList = [];
         require("connection_connect.php");
-        $sql = "SELECT * from priceproduct NATURAL JOIN product";
+        $sql = "SELECT * FROM priceproduct NATURAL JOIN product";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
@@ -58,7 +58,7 @@ class priceproduct{
     public static function search($key)
     {
         require("connection_connect.php");
-        $sql = "SELECT * from priceproduct NATURAL JOIN product where (PRI_ID like'%key%' or PRO_ID like'%key%' or PRO_Name like '%key%') and PRO_ID = PRO_ID";
+        $sql = "SELECT * FROM priceproduct NATURAL JOIN product where (PRI_ID like'%key%' or PRO_ID like'%key%' or PRO_Name like '%key%') and PRO_ID = PRO_ID";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
@@ -77,7 +77,7 @@ class priceproduct{
     public static function add($PRO_ID,$PRI_ID,$PRI_Qty,$PRI_Price,$PRI_SCEEN)
     {
         require("connection_connect.php");
-        $sql = "INSERT into priceproduct(PRO_ID,PRI_ID,PRI_Qty,PRI_Price,PRI_SCEEN) VALUES ('$PRO_ID','$PRI_ID','$PRI_Qty','$PRI_Price','$PRI_SCEEN')";
+        $sql = "INSERT INTO priceproduct(PRO_ID,PRI_ID,PRI_Qty,PRI_Price,PRI_SCEEN) VALUES ('$PRO_ID','$PRI_ID','$PRI_Qty','$PRI_Price','$PRI_SCEEN')";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "Add success $result rows";
@@ -95,7 +95,7 @@ class priceproduct{
     public static function delet($PRI_ID)
     {
         require_once("connection_connect.php");
-        $sql = "DELETE from priceproduct WHERE PRI_ID = '$PRI_ID'";
+        $sql = "DELETE FROM priceproduct WHERE PRI_ID = '$PRI_ID'";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "Delete success $result rows";
