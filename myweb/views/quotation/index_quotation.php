@@ -6,12 +6,12 @@
 <td>พนักงาน</td>
 <td>ที่อยู่ลูกค้า</td>
 <td>เบอร์โทร</td>
+<td>เงื่อนไขชำระ</td>
 <td>update</td>
 <td>delete</td>
 </tr>
 <p>จัดทำโดย นางสาวกมลชนก ศรีหา รหัสนิสิต 6220503163</p>
 <p>ยินดีต้อนรับสู่ใบเสนอราคา!</p>
-<br /> 
 เพิ่มใบเสนอราคา <a href=?controller=quotation&action=newQuotation>click</a><br>
 <br /> 
 <form method="get" action="">
@@ -29,6 +29,7 @@ search</button>
     <td>$quotation->EMP_NAME</td> 
     <td>$quotation->CUS_Add</td>
     <td>$quotation->CUS_Tel</td> 
+    <td>$quotation->Q_CDT</td> 
     <td><a href=?controller=quotation&action=updateForm&Q_ID=$quotation->Q_ID>update</a></td>
     <td><a href=?controller=quotation&action=deleteConfirm&Q_ID=$quotation->Q_ID>delete</a></td>
     </tr>"; 
