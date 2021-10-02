@@ -4,14 +4,14 @@
 <label>วันที่ <input type="date" name="Q_DATE"
         value="<?php echo $quotation->Q_DATE;?>"/></label><br>
 
- <label>ชื่อลูกค้า <select name="CUS_Name">
+        <label>ชื่อลูกค้า <select name="CUS_Name">
     <?php foreach($customerList as $c) {
         echo "<option value = $c->id";
         if($c->id==$quotation->CUS_ID){echo " selected='selected'";}
          echo ">$c->name</option>";}
     ?>
     </select></label><br> 
-
+    
 <label>ชื่อพนักงาน <select name="EMP_Name">
     <?php foreach($employeeList as $e) {
         echo "<option value = $e->id";
