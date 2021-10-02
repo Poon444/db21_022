@@ -32,5 +32,6 @@ class QuotationController
         $quotationList = Quotation::search($key);
         require_once("./views/quotation/index_quotation.php");
     }
+    
 }
 ?>

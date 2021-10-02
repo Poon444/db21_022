@@ -62,4 +62,30 @@ class Quotation
         return $quotationList;
 
     }
+
+    public static function get($id)
+    {
+        require("connection_connect.php");
+        $sql="SELECT * FROM quotation NATURAL JOIN employee NATURAL JOIN customer WHERE Q_ID='$id' and CUS_ID = CUS_ID";
+        $result=$conn->query($sql);
+        $my_row=$result->fetch_assoc();
+        $q_id = $my_row[Q_ID];
+        $date = $my_row[Q_DATE];
+        $cus_name = $my_row[CUS_Name];
+        $emp_name = $my_row[EMP_Name];
+        $cus_add = $my_row[CUS_Add];
+        $cus_tel = $my_row[CUS_Tel];
+        require("connection_close.php");
+        return new Quotation($q_id,$date,$cus_name,$emp_name,$cus_add,$cus_tel);
+
+    }
+    public static function Update($qid,$date,$idcus,$idemp,$qcdt,$qdeposit)
+     {
+        require("connection_connect.php");
+        $sql="UPDATE `quotation` SET `Q_ID`='$qid',`Q_DATE`='$date',
+        `EMP_ID`='$idemp',`CUS_ID`='$idcus',`Q_CDT`='$qcdt',`Q_deposit`='$qdeposit' WHERE Q_ID = '$qid'";
+        $result=$conn->query($sql);
+        require("connection_close.php");
+        return ;
+     }
 }
