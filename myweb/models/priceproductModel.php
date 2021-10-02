@@ -58,7 +58,7 @@ class priceproduct{
     public static function search($key)
     {
         require("connection_connect.php");
-        $sql = "SELECT * FROM priceproduct NATURAL JOIN product where (PRI_ID like'%key%' or PRO_ID like'%key%' or PRO_Name like '%key%') and PRO_ID = PRO_ID";
+        $sql = "SELECT * FROM priceproduct NATURAL JOIN product WHERE (PRI_ID like'%$key%' or PRO_ID like'%$key%' or PRO_Name like '%$key%') and PRO_ID = PRO_ID";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
