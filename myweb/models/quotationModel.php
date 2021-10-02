@@ -1,14 +1,17 @@
 <?php
 class Quotation
 {
-    public $Q_ID,$CUS_ID,$EMP_ID,$Q_DATE;
+    public $Q_ID,$Q_DATE,$CUS_NAME,$EMP_NAME,$CUS_Add;
 
-    public function __construct($Q_ID,$CUS_ID,$EMP_ID,$Q_DATE)
+    public function __construct($Q_ID,$Q_DATE,$CUS_NAME,$EMP_NAME,$CUS_Add,$CUS_Tel)
     {
         $this->Q_ID = $Q_ID;
-        $this->CUS_ID = $C_ID;
-        $this->EMP_ID = $E_ID;
         $this->Q_DATE = $Q_DATE;
+        $this->CUS_NAME = $CUS_NAME;
+        $this->EMP_NAME = $EMP_NAME;
+        $this->CUS_Add = $CUS_Add;
+        $this->CUS_Tel = $CUS_Tel;
+
     }
 
     public static function getAll()
@@ -16,17 +19,30 @@ class Quotation
         // echo "ingetall";
         $quotationList = [];
         require("connection_connect.php");
-        $sql = "select * from quotation";
+        $sql = "SELECT * FROM quotation NATURAL JOIN customer NATURAL JOIN employee";
         $result = $conn->query($sql);
         // echo $sql;
         while ($my_row = $result->fetch_assoc()) {
-            $Q_ID = $my_row[Q_ID];
-            $C_ID = $my_row[CUS_ID];
-            $E_ID = $my_row[EMP_ID];
+            $q_id = $my_row[Q_ID];
             $date = $my_row[Q_DATE];
-            $quotationList[] = new Quotation($Q_ID,$C_ID,$E_ID,$date);
+            $cus_name = $my_row[CUS_Name];
+            $emp_name = $my_row[EMP_Name];
+            $cus_add = $my_row[CUS_Add];
+            $cus_tel = $my_row[CUS_Tel];
+            $quotationList[] = new Quotation($q_id,$date,$cus_name,$emp_name,$cus_add,$cus_tel);
         }
         require("connection_close.php");
         return $quotationList;
+    }
+
+    public static function Add($qid,$qdate,$idcus,$idemp,$qcdt,$qdeposit,$pdom)
+    { 
+       require("connection_connect.php");
+       $float = (float)$qdeposit;
+       $sql = "INSERT INTO `quotation` (`Q_ID`, `Q_DATE`, `EMP_ID`, `CUS_ID`, `Q_CDT`, `Q_deposit`, `PDO_M`) VALUES ('$qid', '$qdate', '$idemp', '$idcus', '$qcdt', '$qdeposit','$pdom')";
+       echo "hi";
+       $result = $conn->query($sql);
+       require("connection_close.php");
+       return  ;
     }
 }
