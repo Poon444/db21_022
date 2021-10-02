@@ -32,6 +32,28 @@ class QuotationController
         $quotationList = Quotation::search($key);
         require_once("./views/quotation/index_quotation.php");
     }
+
+    public function updateForm()
+    {
+        $id=$_GET['Q_ID'];
+        $quotation = Quotation::get($id);
+        $employeeList = Employee::getAll();
+        $customerList = Customer::getAll();
+        require_once("./views/quotation/updateForm.php");
+    }
+
+    public function update()
+    {
+        $qid=$_GET['Q_ID'];
+        $date=$_GET['Q_DATE'];
+        $customer=$_GET['CUS_Name'];
+        $employee=$_GET['EMP_Name'];
+        $qcdt=$_GET['Q_CDT'];
+        $qdeposit=$_GET['Q_deposit'];
+        Quotation::Update($qid,$date,$customer,$employee,$qcdt,$qdeposit);
+
+        QuotationController::index();
+    }
     
 }
 ?>

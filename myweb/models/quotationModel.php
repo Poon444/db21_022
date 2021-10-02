@@ -2,8 +2,9 @@
 class Quotation
 {
     public $Q_ID,$Q_DATE,$CUS_NAME,$EMP_NAME,$CUS_Add;
+    public $CUS_ID,$EMP_ID,$Q_CDT,$Q_deposit;
 
-    public function __construct($Q_ID,$Q_DATE,$CUS_NAME,$EMP_NAME,$CUS_Add,$CUS_Tel)
+    public function __construct($Q_ID,$Q_DATE,$CUS_NAME,$EMP_NAME,$CUS_Add,$CUS_Tel,$CUS_ID,$EMP_ID,$Q_CDT,$Q_deposit)
     {
         $this->Q_ID = $Q_ID;
         $this->Q_DATE = $Q_DATE;
@@ -11,6 +12,11 @@ class Quotation
         $this->EMP_NAME = $EMP_NAME;
         $this->CUS_Add = $CUS_Add;
         $this->CUS_Tel = $CUS_Tel;
+
+        $this->CUS_ID = $CUS_ID;
+        $this->EMP_ID = $EMP_ID;
+        $this->Q_CDT = $Q_CDT;
+        $this->Q_deposit = $Q_deposit;
 
     }
 
@@ -27,7 +33,13 @@ class Quotation
             $emp_name = $my_row[EMP_Name];
             $cus_add = $my_row[CUS_Add];
             $cus_tel = $my_row[CUS_Tel];
-            $quotationList[] = new Quotation($q_id,$date,$cus_name,$emp_name,$cus_add,$cus_tel);
+
+            $cus_id = $my_row[CUS_ID];
+            $emp_id = $my_row[EMP_ID];
+            $q_cdt = $my_row[Q_CDT];
+            $q_deposit = $my_row[Q_deposit];
+
+            $quotationList[] = new Quotation($q_id,$date,$cus_name,$emp_name,$cus_add,$cus_tel,$cus_id,$emp_id,$q_cdt,$q_deposit);
         }
         require("connection_close.php");
         return $quotationList;
@@ -56,7 +68,12 @@ class Quotation
             $emp_name = $my_row[EMP_Name];
             $cus_add = $my_row[CUS_Add];
             $cus_tel = $my_row[CUS_Tel];
-            $quotationList[] = new Quotation($q_id,$date,$cus_name,$emp_name,$cus_add,$cus_tel);
+
+            $cus_id = $my_row[CUS_ID];
+            $emp_id = $my_row[EMP_ID];
+            $q_cdt = $my_row[Q_CDT];
+            $q_deposit = $my_row[Q_deposit];
+            $quotationList[] = new Quotation($q_id,$date,$cus_name,$emp_name,$cus_add,$cus_tel,$cus_id,$emp_id,$q_cdt,$q_deposit);
         }
         require("connection_close.php");
         return $quotationList;
@@ -75,8 +92,13 @@ class Quotation
         $emp_name = $my_row[EMP_Name];
         $cus_add = $my_row[CUS_Add];
         $cus_tel = $my_row[CUS_Tel];
+
+        $cus_id = $my_row[CUS_ID];
+        $emp_id = $my_row[EMP_ID];
+        $q_cdt = $my_row[Q_CDT];
+        $q_deposit = $my_row[Q_deposit];
         require("connection_close.php");
-        return new Quotation($q_id,$date,$cus_name,$emp_name,$cus_add,$cus_tel);
+        return new Quotation($q_id,$date,$cus_name,$emp_name,$cus_add,$cus_tel,$cus_id,$emp_id,$q_cdt,$q_deposit);
 
     }
     public static function Update($qid,$date,$idcus,$idemp,$qcdt,$qdeposit)
