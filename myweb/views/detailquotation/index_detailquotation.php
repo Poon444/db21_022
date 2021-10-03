@@ -13,6 +13,13 @@
 <br /> 
 <p>นครินทร์ คชสีห์ 6220503279</p>
 <br /> 
+<form method="get" action="">
+        <input type="text" name="key">
+        <input type="hidden" name="controller" value="quotation">
+        <button type="submit" name="action" value="search">
+search</button>
+<br /> 
+</form>
 <?php foreach($DetailQuotation_list as $detailquotation)
 {
     echo"<tr>
