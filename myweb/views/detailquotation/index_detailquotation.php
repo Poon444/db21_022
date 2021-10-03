@@ -12,6 +12,8 @@
 </tr>
 <br /> 
 <p>นครินทร์ คชสีห์ 6220503279</p>
+เพิ่มรายละเอียดสินค้า <a href=?controller=detailquotation&action=newDetailQuotation>click</a><br>
+<br /> 
 <br /> 
 <form method="get" action="">
         <input type="text" name="key">

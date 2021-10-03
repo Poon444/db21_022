@@ -2,7 +2,7 @@
 $controllers = array('pages'=>['home', 'error'],
 					'quotation'=>['index','newQuotation','addQuotation','search','updateForm','update','deleteConfirm','delete'],
 					'priceproduct'=>['index','search','newPriceproduct','addPriceproduct'],
-					'detailquotation'=>['index','search']); 
+					'detailquotation'=>['index','search','newDetailQuotation','addDetailQuotation'); 
 
 function call($controller, $action){
 	echo "routes to ".$controller."-".$action."<br>";

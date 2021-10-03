@@ -69,4 +69,13 @@ class DetailQuotation
         require("connection_close.php");
         return $DetailQuotationList;
     }
+
+    public static function Add($Q_ID,$DQ_ID,$STOCK_ID,$DQ_NUMBER,$DQ_QTY,$DQ_CUINT)
+    { 
+       require("connection_connect.php");
+       $sql = "INSERT INTO `DetailQuotation` (`Q_ID`, `DQ_ID`, `STOCK_ID`, `DQ_NUMBER`, `DQ_QTY`, `DQ_CUINT`) VALUES ('$Q_ID', '$DQ_ID', '$STOCK_ID', '$DQ_NUMBER', '$DQ_QTY', '$DQ_CUINT')";
+       $result = $conn->query($sql);
+       require("connection_close.php");
+       return  ;
+    }
 }
