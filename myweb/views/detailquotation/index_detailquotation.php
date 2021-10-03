@@ -15,7 +15,7 @@
 <br /> 
 <form method="get" action="">
         <input type="text" name="key">
-        <input type="hidden" name="controller" value="quotation">
+        <input type="hidden" name="controller" value="detailquotation">
         <button type="submit" name="action" value="search">
 search</button>
 <br /> 

@@ -11,7 +11,7 @@ class DetailQuotationController
     {
         $key=$_GET['key'];
         $DetailQuotation_list = DetailQuotation::search($key);
-        require_once("./views/quotation/index_quotation.php");
+        require_once("./views/detailquotation/index_detailquotation.php");
     }
 
   
