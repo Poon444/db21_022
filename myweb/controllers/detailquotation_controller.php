@@ -1,5 +1,5 @@
 <?php
-class DqtailQuotationController
+class DetailQuotationController
 {
     public function index()
     {
