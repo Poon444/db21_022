@@ -32,7 +32,7 @@ search</button>
     <td>$detailquotation->COLOUR_NAME</td>
     <td>$detailquotation->DQ_QTY</td>
     <td>$detailquotation->DQ_CUINT</td>
-    <td>Update</td>
+    <td><a href=?controller=detailquotation&action=updateForm&DQ_ID=$detailquotation->DQ_ID>update</a></td>
     <td>Delete</td>
     </tr>";
 

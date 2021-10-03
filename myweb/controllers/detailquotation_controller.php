@@ -33,5 +33,28 @@ class DetailQuotationController
         DetailQuotationController::index();
 
     }
+
+    public function updateForm()
+    {
+        $id=$_GET['DQ_ID'];
+        $detailquotation = DetailQuotation::get($id);
+        $StockofProductList = StockofProduct::getAll();
+        $quotation = Quotation::getAll();
+        require_once("./views/quotation/updateForm.php");
+    }
+
+    public function update()
+    {
+        $Q_ID = $_GET['Q_ID'];
+        $DQ_ID = $_GET['DQ_ID'];
+        $STOCK_ID = $_GET['STOCK_ID'];
+        $DQ_NUMBER= $_GET['DQ_NUMBER'];
+        $DQ_QTY = $_GET['DQ_QTY'];
+        $DQ_CUINT =$_GET['DQ_CUINT'];
+        $oldid =$_GET['oldid'];
+        DetailQuotation::Update($Q_ID,$DQ_ID,$STOCK_ID,$DQ_NUMBER,$DQ_QTY,$DQ_CUINT,$oldid);
+        DetailQuotationController::index();
+
+    }
 }
 ?>
