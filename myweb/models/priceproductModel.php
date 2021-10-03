@@ -19,8 +19,8 @@ class priceproduct{
     }
     public static function get($id)
     {
-        requite("connection_connect.php");
-        $sql = "SELECT * FROM priceproduct NATURAL JOIN product";
+        require("connection_connect.php");
+        $sql = "SELECT * FROM priceproduct NATURAL JOIN product WHERE PRI_ID = '$id' ";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
         $PRI_ID=$my_row[PRI_ID];
@@ -83,16 +83,19 @@ class priceproduct{
         return "Add success $result rows";
     }
 
-    public static function update($PRI_ID,$PRI_Qty,$PRI_Price,$PRI_SCEEN)
+    public static function update($PRI_ID,$PRO_ID,$PRI_Qty,$PRI_Price,$PRI_SCEEN,$oldid)
     {
         require("connection_connect.php");
-        $sql = "UPDATE priceproduct SET PRI_ID = '$PRI_ID', PRI_Qty = '$PRI_Qty', PRI_Price = '$PRI_Price',PRI_SCEEN = '$PRI_SCEEN' WHERE PRI_ID = '$PRI_ID'";
+
+        $sql="UPDATE `priceproduct` SET `PRI_ID`='$PRI_ID',`PRO_ID`='$PRO_ID',
+        `PRI_Qty`='$PRI_Qty',`PRI_Price`='$PRI_Price',`PRI_SCEEN`='$PRI_SCEEN' WHERE PRI_ID = '$oldid'";
+
         $result = $conn->query($sql);
         require("connection_close.php");
         return "Update success $result rows";
     }
     
-    public static function delet($PRI_ID)
+    public static function delete($PRI_ID)
     {
         require_once("connection_connect.php");
         $sql = "DELETE FROM priceproduct WHERE PRI_ID = '$PRI_ID'";

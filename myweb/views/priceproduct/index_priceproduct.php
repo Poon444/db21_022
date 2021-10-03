@@ -8,6 +8,10 @@
 <td>Update</td>
 <td>Delete</td></tr>
 
+<br /> 
+<p>นาย เสฏฐนันท์ เลี่ยมยองใย 6220503368</p>
+<br /> 
+
 Add <a href=?controller=priceproduct&action=newPriceproduct>click</a><br>
 <br/>
 
@@ -27,8 +31,8 @@ Add <a href=?controller=priceproduct&action=newPriceproduct>click</a><br>
     <td>$priceproduct->PRI_Qty</td>
     <td>$priceproduct->PRI_Price</td>
     <td>$priceproduct->PRI_SCEEN</td>
-    <td>Update</td>
-    <td>Delete</td>
+    <td><a href=?controller=priceproduct&action=updateForm&PRI_ID=$priceproduct->PRI_ID>update</a></td>
+    <td><a href=?controller=priceproduct&action=deleteConfirm&PRI_ID=$priceproduct->PRI_ID>delete</a></td>
     </tr>";
 
 }
