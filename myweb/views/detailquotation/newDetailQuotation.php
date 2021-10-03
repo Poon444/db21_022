@@ -2,7 +2,7 @@
 <label>DQ_ID <input type="text" name="DQ_ID"/></label><br>
 
 <label>Q_ID <select name="Q_ID">
-<?php foreach($Quotation as $Q) {echo "<option value = $Q->Q_ID>
+<?php foreach($quotation as $Q) {echo "<option value = $Q->Q_ID>
     $Q->Q_ID</option>";}
     ?>
 </select></label><br>
@@ -10,7 +10,7 @@
 <label>ProductID <select name="STOCK_ID">
 <?php foreach($StockofProductList as $S){
         echo "<option value = $S->sid>
-        $s->name $s->color</option>";}?>
+        $S->name $S->color</option>";}?>
 </select></label><br>
 
 <label>DQ_NUMBER<input type="text" name="DQ_NUMBER"/></label><br>

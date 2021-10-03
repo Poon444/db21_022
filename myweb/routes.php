@@ -2,7 +2,7 @@
 $controllers = array('pages'=>['home', 'error'],
 					'quotation'=>['index','newQuotation','addQuotation','search','updateForm','update','deleteConfirm','delete'],
 					'priceproduct'=>['index','search','newPriceproduct','addPriceproduct'],
-					'detailquotation'=>['index','search','newDetailQuotation','addDetailQuotation'); 
+					'detailquotation'=>['index','search','newDetailQuotation','addDetailQuotation']); 
 
 function call($controller, $action){
 	echo "routes to ".$controller."-".$action."<br>";
@@ -24,6 +24,8 @@ function call($controller, $action){
 							break;
 
 		case "detailquotation" :  require_once("models/DetailQuotationModel.php");
+								  require_once("models/quotationModel.php");
+								  require_once("models/stockofproductModel.php");
 							      $controller = new DetailQuotationController();
 								  break;
 	}

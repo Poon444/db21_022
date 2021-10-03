@@ -14,7 +14,7 @@ class StockofProduct
     {
         $stockofproductlist = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM DetailQuotation NATURAL JOIN quotation NATURAL JOIN stockofproduct NATURAL JOIN colour NATURAL JOIN product";
+        $sql = "SELECT * FROM stockofproduct NATURAL JOIN colour NATURAL JOIN product";
         $result = $conn->query($sql);
         while ($my_row = $result->fetch_assoc()) {
             $sid = $my_row[STOCK_ID];
