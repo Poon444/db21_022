@@ -40,7 +40,7 @@ class DetailQuotationController
         $detailquotation = DetailQuotation::get($id);
         $StockofProductList = StockofProduct::getAll();
         $quotation = Quotation::getAll();
-        require_once("./views/quotation/updateForm.php");
+        require_once("./views/detailquotation/updateForm.php");
     }
 
     public function update()

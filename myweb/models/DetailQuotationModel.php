@@ -103,19 +103,18 @@ class DetailQuotation
         require("connection_connect.php");
         $sql = "SELECT * FROM DetailQuotation NATURAL JOIN quotation NATURAL JOIN stockofproduct NATURAL JOIN colour NATURAL JOIN product WHERE DQ_ID = '$id' ";
         $result = $conn->query($sql);
-       
-            $Q_ID = $my_row[Q_ID];
-            $DQ_ID = $my_row[DQ_ID];
-            $DQ_NUMBER = $my_row[DQ_NUMBER];
-            $STOCK_ID = $my_row[STOCK_ID];
-            $DQ_QTY = $my_row[DQ_QTY];
-            $DQ_CUINT = $my_row[DQ_CUINT];
+        $my_row=$result->fetch_assoc();
+        $Q_ID = $my_row[Q_ID];
+        $DQ_ID = $my_row[DQ_ID];
+        $DQ_NUMBER = $my_row[DQ_NUMBER];
+        $STOCK_ID = $my_row[STOCK_ID];
+         $DQ_QTY = $my_row[DQ_QTY];
+        $DQ_CUINT = $my_row[DQ_CUINT];
 
-            $PRO_ID = $my_row[PRO_ID];
-            $PRO_Name = $my_row[PRO_Name];
-            $COLOUR_ID = $my_row[COLOUR_ID];
-            $COLOUR_NAME = $my_row[COLOUR_NAME];
-        
+        $PRO_ID = $my_row[PRO_ID];
+        $PRO_Name = $my_row[PRO_Name];
+        $COLOUR_ID = $my_row[COLOUR_ID];
+        $COLOUR_NAME = $my_row[COLOUR_NAME];
         require("connection_close.php");
         return new DetailQuotation($Q_ID,$DQ_ID,$DQ_NUMBER,$STOCK_ID,$DQ_QTY,$DQ_CUINT,$PRO_ID,$PRO_Name,$COLOUR_ID,$COLOUR_NAME);
     }
