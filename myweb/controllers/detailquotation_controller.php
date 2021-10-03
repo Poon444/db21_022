@@ -56,5 +56,19 @@ class DetailQuotationController
         DetailQuotationController::index();
 
     }
+
+    public function deleteConfirm()
+    {
+        $id=$_GET['DQ_ID'];
+        $detailquotation = DetailQuotation::get($id);
+        require_once("./views/quotation/deleteConfirm.php");
+    }
+    public function delete()
+    {
+        $id=$_GET['DQ_ID'];
+        DetailQuotation::delete($id);
+        DetailQuotationController::index();
+    }
+
 }
 ?>
