@@ -2,7 +2,7 @@
 <label>ID <input type="text" name="PRI_ID"/></label><br>
 <label>Product ID <select name="PRO_ID">
 <?php foreach($productList as $P) {echo "<option value = $P->PRO_ID>
-    $P->name</option>";}
+    $P->PRO_ID</option>";}
     ?>
 </select></label><br>
 <label>Quantity<input type="text" name="PRI_Qty"/></label><br>

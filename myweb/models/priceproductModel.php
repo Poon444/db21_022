@@ -77,7 +77,7 @@ class priceproduct{
     public static function add($PRO_ID,$PRI_ID,$PRI_Qty,$PRI_Price,$PRI_SCEEN)
     {
         require("connection_connect.php");
-        $sql = "INSERT INTO priceproduct(PRO_ID,PRI_ID,PRI_Qty,PRI_Price,PRI_SCEEN) VALUES ('$PRO_ID','$PRI_ID','$PRI_Qty','$PRI_Price','$PRI_SCEEN')";
+        $sql = "INSERT INTO `priceproduct` (`PRO_ID`,`PRI_ID`,`PRI_Qty`,`PRI_Price`,`PRI_SCEEN`) VALUES ('$PRO_ID','$PRI_ID','$PRI_Qty','$PRI_Price','$PRI_SCEEN')";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "Add success $result rows";

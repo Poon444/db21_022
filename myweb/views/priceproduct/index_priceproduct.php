@@ -7,9 +7,9 @@
 <td>ScreenPrice</td>
 <td>Update</td>
 <td>Delete</td></tr>
-<p>Welcome to PriceProduct</p>
+
 Add <a href=?controller=priceproduct&action=newPriceproduct>click</a><br>
-<br/>   
+<br/>
 
 <form method="get"action="">
     <input type="text" name="key">
@@ -29,10 +29,7 @@ Add <a href=?controller=priceproduct&action=newPriceproduct>click</a><br>
     <td>$priceproduct->PRI_SCEEN</td>
     <td>Update</td>
     <td>Delete</td>
-    <td><a href=?controller=priceproduct&action=updateForm&PRI_ID=$priceproduct->PRI_ID>update</a></td>
-    <td><a href=?controller=priceproduct&action=deleteConfirm&PRI_ID=$priceproduct->PRI_ID>deleted</a></td>
     </tr>";
-    
 
 }
 echo "</table>";
