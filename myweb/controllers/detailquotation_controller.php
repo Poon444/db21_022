@@ -61,7 +61,7 @@ class DetailQuotationController
     {
         $id=$_GET['DQ_ID'];
         $detailquotation = DetailQuotation::get($id);
-        require_once("./views/quotation/deleteConfirm.php");
+        require_once("./views/detailquotation/deleteConfirm.php");
     }
     public function delete()
     {
