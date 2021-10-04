@@ -5,7 +5,7 @@ $controllers = array('pages'=>['home', 'error'],
 					'detailquotation'=>['index','search','newDetailQuotation','addDetailQuotation','updateForm','update','deleteConfirm','delete']); 
 
 function call($controller, $action){
-	echo "routes to ".$controller."-".$action."<br>";
+	//echo "routes to ".$controller."-".$action."<br>";
 	require_once("./controllers/" .$controller."_controller.php"); 
 	switch($controller)
 	{
