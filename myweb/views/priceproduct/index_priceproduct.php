@@ -47,7 +47,9 @@ table th.last {
 <br /> 
 <p>นาย เสฏฐนันท์ เลี่ยมยองใย 6220503368</p>
 <br /> 
-
+<img src="https://sv1.picz.in.th/images/2021/10/04/CFehgV.jpg" width="444" height="248" >
+<br /> 
+<br /> 
 Add <a href=?controller=priceproduct&action=newPriceproduct>click</a><br>
 <br/>
 
