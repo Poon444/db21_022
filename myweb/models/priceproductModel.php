@@ -38,7 +38,7 @@ class priceproduct{
     {
         $priceproductList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM priceproduct NATURAL JOIN product ORDER BY PRI_ID";
+        $sql = "SELECT * FROM priceproduct NATURAL JOIN product ORDER BY PRO_ID";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
