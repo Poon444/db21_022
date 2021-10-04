@@ -22,7 +22,7 @@ class DetailQuotation
     {
         $DetailQuotationList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM DetailQuotation NATURAL JOIN quotation NATURAL JOIN stockofproduct NATURAL JOIN colour NATURAL JOIN product";
+        $sql = "SELECT * FROM DetailQuotation NATURAL JOIN quotation NATURAL JOIN stockofproduct NATURAL JOIN colour NATURAL JOIN product ORDER BY DQ_ID";
         $result = $conn->query($sql);
         while ($my_row = $result->fetch_assoc()) {
             $Q_ID = $my_row[Q_ID];

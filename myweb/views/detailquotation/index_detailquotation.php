@@ -1,14 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: 'Arial';
+  margin: 25px auto;
+  border-collapse: collapse;
+  border: 1px solid #eee;
+  border-bottom: 2px solid #9933FF;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.05), 0px 20px 20px rgba(0, 0, 0, 0.05), 0px 30px 20px rgba(0, 0, 0, 0.05);
+}
+table tr:hover {
+  background: #f4f4f4;
+}
+table tr:hover td {
+  color: #000;
+}
+table th, table td {
+  color: #555;
+  border: 1px solid #eee;
+  padding: 12px 35px;
+  border-collapse: collapse;
+}
+table th {
+  background: #9933FF;
+  color: #fff;
+  text-transform: uppercase;
+}
+table th.last {
+  border-right: none;
+}
+</style>
+</head>
+<body>
+
 <table border = 1>
 <tr> 
-<td>Q_ID</td>
-<td>DQ_ID</td>
-<td>DQ_NUMBER</td>
-<td>PRO_NAME</td>
-<td>PRO_COLOUR</td>
-<td>DQ_QTY</td>
-<td>DQ_CUINT</td>
-<td>update</td>
-<td>delete</td>
+<th>Q_ID</th>
+<th>DQ_ID</th>
+<th>DQ_NUMBER</th>
+<th>PRO_NAME</th>
+<th>PRO_COLOUR</th>
+<th>DQ_QTY</th>
+<th>DQ_CUINT</th>
+<th>update</th>
+<th>delete</th>
 </tr>
 <br /> 
 <p>นครินทร์ คชสีห์ 6220503279</p>
@@ -39,3 +75,5 @@ search</button>
 }
 echo "</table>";
 ?>
+</body>
+</html>

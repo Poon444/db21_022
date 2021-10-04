@@ -67,15 +67,26 @@ if(isset($_GET['controller']) && isset($_GET['action']))
   background-color: #FF3333;
   color: white;
 }
+.button5 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #33FF33;
+}
+
+.button5:hover {
+  background-color: #33FF33;
+  color: white;
+}
 </style>
 <head></head>
 <body>
 <center>
     <br>
-    <a class="button button4" href="?controller=pages&action=home">Home</a>
+    <a class="button button5" href="?controller=pages&action=home">Home</a>
     <a class="button button1" href="?controller=quotation&action=index">Quotation</a>
     <a class="button button3" href="?controller=detailquotation&action=index">DetailQuotation</a>
     <a class="button button2" href="?controller=priceproduct&action=index">Priceproduct</a>
+    <a class="button button4" href="http://158.108.207.4/db21">Exit</a>
     <br>
     <?php require_once("./routes.php"); ?>
 </center>
