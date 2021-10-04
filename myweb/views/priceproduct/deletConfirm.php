@@ -1,5 +1,5 @@
 <?php echo "<br> ARE U SURE U WANT TO DO THIS ???????? <br>
-            <br> $PRI->PRI_ID <br>"; ?>
+            <br> $PRI->PRO_ID $PRI->PRO_Name จำนวน $PRI->PRI_Qty<br>"; ?>
 
 <form method="get" action="">
 
